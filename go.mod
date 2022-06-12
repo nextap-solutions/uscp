@@ -1,4 +1,4 @@
-module github.com/wexder/uscp
+module github.com/nextap-solutions/uscp
 
 go 1.18
 
