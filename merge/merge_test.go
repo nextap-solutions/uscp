@@ -3,8 +3,8 @@ package merge_test
 import (
 	"testing"
 
+	"github.com/nextap-solutions/uscp/merge"
 	"github.com/stretchr/testify/assert"
-	"github.com/wexder/uscp/merge"
 )
 
 func TestMerge2(t *testing.T) {

@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/wexder/uscp/encoding"
-	"github.com/wexder/uscp/merge"
+	"github.com/nextap-solutions/uscp/encoding"
+	"github.com/nextap-solutions/uscp/merge"
 	"gopkg.in/yaml.v3"
 )
 
