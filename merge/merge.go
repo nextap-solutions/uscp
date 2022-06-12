@@ -1,5 +1,6 @@
 package merge
 
+// TODO we don't handle slices of map
 func iteratePatch(data map[string]any, patch map[string]any, path []string) {
 	for key, value := range patch {
 		if innerPatch, ok := value.(map[string]any); ok {
