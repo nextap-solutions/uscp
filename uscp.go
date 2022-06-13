@@ -116,7 +116,6 @@ func (u *Uscp) Unmarshal(out interface{}) error {
 		return err
 	}
 
-	fmt.Println(string(jsonBytes))
 	err = yaml.Unmarshal(jsonBytes, out)
 	if err != nil {
 		return err
