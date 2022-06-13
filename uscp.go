@@ -9,9 +9,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/mitchellh/mapstructure"
+
 	"github.com/nextap-solutions/uscp/encoding"
 	"github.com/nextap-solutions/uscp/merge"
-	"gopkg.in/yaml.v3"
 )
 
 type config struct {
@@ -62,7 +63,7 @@ func (u *Uscp) ReadInConfiguration() error {
 	for _, path := range u.ConfigPaths {
 		files, err := os.ReadDir(path)
 		if err != nil {
-			return err
+			continue
 		}
 		for _, file := range files {
 			if file.IsDir() {
@@ -111,13 +112,7 @@ func (u *Uscp) Unmarshal(out interface{}) error {
 		}
 	}
 
-	jsonBytes, err := yaml.Marshal(result)
-	if err != nil {
-		return err
-	}
-
-	fmt.Println(string(jsonBytes))
-	err = yaml.Unmarshal(jsonBytes, out)
+	err := mapstructure.Decode(result, out)
 	if err != nil {
 		return err
 	}
