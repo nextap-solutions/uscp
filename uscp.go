@@ -143,7 +143,7 @@ func iterateStruct(t reflect.Value, path []string) error {
 	for i := 0; i < t.NumField(); i++ {
 		f := t.Type().Field(i)
 		n := f.Name
-		value, present := os.LookupEnv(strings.Join(append(path, n), "_"))
+		value, present := os.LookupEnv(strings.ToUpper(strings.Join(append(path, n), "_")))
 		switch f.Type.Kind() {
 		case reflect.Struct:
 			// We want to check if we can unmarshal the value directly with unmarshaller

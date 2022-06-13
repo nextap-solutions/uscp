@@ -53,7 +53,7 @@ func main() {
 	u.SetConfigName("conf")
 }
 ```
-In this example you can set he value of `M` with env var `conf_Obj_M`.
+In this example you can set he value of `M` with env var `CONF_OBJ_M`.
 Autobinding follows simple pattern of filename followed by struct path you want to set with underscore to connect them all. 
 
 Second path is to use `uscp_env` struct tag.
