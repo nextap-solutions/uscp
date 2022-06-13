@@ -216,5 +216,9 @@ func sliceContains(slice []string, value string) bool {
 
 func getNameAndExtenstion(filename string) (string, string) {
 	split := strings.Split(filename, ".")
+	if len(split) != 2 {
+		return split[0], ""
+	}
+
 	return split[0], split[1]
 }
